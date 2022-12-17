@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script src="static/js/libs/p5.min.js"></script>
+    <script>
+        let w = 400
+        let h = 400
+        let x = 0
+        let y = 0
+        let lato = 20
+
+        function setup() {
+            createCanvas(w, h);
+            background(220);
+        }
+
+        function draw() {
+            let r = random()
+            if (r > 0.5) {
+                //line(x, y + lato, x + lato, y)
+                fill(51)
+                square(x, y, lato)
+                fill(255, 204, 100)
+                circle(x + lato / 2, +y + lato / 2, lato / 2)
+                fill(255, 204, 0)
+
+
+            } else {
+                //line(x, y, x + lato, y + lato)
+                fill(255, 204, 0)
+                square(x, y, lato)
+                fill(51)
+                circle(x + lato / 2, +y + lato / 2, lato / 2)
+                fill(255, 204, 0)
+
+            }
+            x = x + lato
+            if (x >= 400) {
+                x = 0
+                y = y + lato
+            }
+        }
+    </script>
+</body>
+
+</html>
